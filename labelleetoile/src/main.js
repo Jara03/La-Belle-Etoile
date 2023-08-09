@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import axios from 'axios';
+import '../dist/output.css'
+import VueTailwindDatepicker from 'vue-tailwind-datepicker'
 
+/*
 axios.put('http://localhost:1337/api/i-calendar',{
     data:{
         icalData:{"c'est trop":"tes please"}
@@ -17,4 +19,11 @@ axios.get('http://localhost:1337/api/i-calendar').then(response => {
     console.log(response);
 });
 
-createApp(App).mount('#app')
+
+ */
+
+
+const app = createApp(App)
+
+app.use(VueTailwindDatepicker)
+app.mount('#app')

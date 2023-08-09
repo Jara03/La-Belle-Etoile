@@ -1,15 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="m-3 flex-1">
+    <DatePickerTest/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DatePickerTest from "@/components/DatePickerTest.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DatePickerTest
   }
 }
 </script>
