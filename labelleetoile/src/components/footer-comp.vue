@@ -47,6 +47,5 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 5px 0;
-  z-index: 1000; /* Assure-toi que le footer est au-dessus du reste du contenu */
 }
 </style>

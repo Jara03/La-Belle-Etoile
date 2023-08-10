@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
 
 
 
@@ -13,8 +13,10 @@
           </nav>
         </div>
       </header>
+    <div class="min-h-screen">
+      <router-view class="flex-grow"></router-view>
+    </div>
 
-    <router-view></router-view>
       <Footer/>
 
   </div>

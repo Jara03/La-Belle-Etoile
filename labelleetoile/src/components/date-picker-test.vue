@@ -5,13 +5,14 @@
         i18n="fr"
         v-model="dateValue"
         :disable-date="dDate"
+
     />
   </div>
 </template>
 
 
 <script setup>
-import { ref} from 'vue'
+import {getCurrentInstance, ref, watch} from 'vue'
 import VueTailwindDatepicker from 'vue-tailwind-datepicker'
 const dateValue = ref([])
 
@@ -78,62 +79,22 @@ async function fetchData() {
     console.error('Error fetching data:', error);
   }
 }
+watch(dateValue, () => {
+  // Appelle la fonction lorsque dateValue change
+  handleDateSelect();
+});
 
+// Obtenez l'instance du composant actuel
+const instance = getCurrentInstance();
+const handleDateSelect = () => {
+  // Emit a custom event with the selected date
+  // The parent component can listen for this event
+  // and take appropriate actions
+  console.log(dateValue)
+  instance.proxy.$emit('date-selected', dateValue);
+}
 
 </script>
-<script>
-//import axios from "axios";
-
-
-
-// eslint-disable-next-line vue/no-export-in-script-setup
-/*
-export default {
-  data: function(){
-    return {
-      dateValue: new Date(), // The selected date
-      airbnbData: {},  // Your Airbnb data object
-    };
-  },
-  computed: {
-    async disabledDates() {
-      if (this.airbnbData.icalData) {
-        const disabledDate =  this.airbnbData.icalData
-            .filter(item => item.summary === 'Reserved' || item.summary === 'Airbnb (Not available)')
-            .map(item => new Date(item.start));
-        console.log(disabledDate);
-        return ['2023-08-18'];
-      } else {
-        return [];
-      }
-    },
-  },
-  mounted() {
-    // Fetch data immediately upon component mount
-    this.fetchData();
-
-    // Fetch data every 3 minutes
-    this.interval = setInterval(this.fetchData, 3 * 60 * 1000);
-  },
-  beforeUnmount() {
-    // Clear the interval when the component is destroyed
-    clearInterval(this.interval);
-  },
-  methods: {
-    async fetchData() {
-      try {
-        const response = await axios.get('http://localhost:1337/api/i-calendar/');
-        this.airbnbData = response.data;
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    },
-  },
-};
-
- */
-</script>
-
 
 <style scoped>
 
