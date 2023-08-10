@@ -1,17 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <div class="m-3 flex-1">
-    <DatePickerTest/>
+  <div>
+
+
+
+      <header class="bg-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-4">
+          <h1 class="text-2xl font-semibold">La Belle Étoile</h1>
+          <nav class="space-x-4">
+            <router-link to="/" class="text-gray-600 hover:text-gray-800 transition">Accueil</router-link>
+            <router-link to="/reservation" class="text-gray-600 hover:text-gray-800 transition">Réservation</router-link>
+            <router-link to="/contact" class="text-gray-600 hover:text-gray-800 transition">Contact</router-link>
+          </nav>
+        </div>
+      </header>
+
+    <router-view></router-view>
+      <Footer/>
+
   </div>
 </template>
 
 <script>
-import DatePickerTest from "@/components/DatePickerTest.vue";
-
+import Footer from "./components/footer-comp.vue";
 export default {
   name: 'App',
   components: {
-    DatePickerTest
+    Footer
   }
 }
 </script>
@@ -25,4 +39,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
