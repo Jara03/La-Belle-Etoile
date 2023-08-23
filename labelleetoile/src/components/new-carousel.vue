@@ -1,7 +1,7 @@
 <template>
   <Carousel>
     <Slide v-for="(photo,index) in photos" :key="index">
-      <image class="carousel__item">{{ photo }}</image>
+      <img :src="photo" alt="photo"/>
     </Slide>
 
     <template #addons>
