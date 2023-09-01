@@ -29,17 +29,65 @@ onMounted(async () => {
   <div class="flex items-center justify-center">
     <p class="px-5 mt-15 my-10 text-center description">Bienvenue dans notre havre de paix. Si vous êtes à la recherche d'un séjour mémorable, laissez-nous vous présenter ce qui vous attend dans notre magnifique chambre d'hôtes</p>
     <NewCarousel class="carousel_container my-4" :photos="photos" />
+    <div class="flex flex-row items-center my-16">
+      <div class="mx-40">
+        <div class="option_item flex flex-row items-center my-5">
+          <div class="option_icon">
+            <img src="../assets/bathtub.png" />
+
+          </div>
+          <p class="option_text mx-10">Salle de bain privée</p>
+        </div>
+        <div class="option_item flex flex-row items-center my-5">
+          <div class="option_icon">
+            <img src="../assets/jacuzzi.png" />
+
+          </div>
+          <p class="option_text mx-10">Jacuzzi</p>
+        </div>
+      </div>
+      <div>
+        <div class="option_item flex flex-row items-center my-5">
+          <div class="option_icon">
+            <img src="../assets/kitchen.png" />
+
+          </div>
+          <p class="option_text mx-10">Cuisine équipée</p>
+        </div>
+        <div class="option_item flex flex-row items-center my-5">
+          <div class="option_icon">
+            <img src="../assets/field.png" />
+
+          </div>
+          <p class="option_text mx-10">Terrasse de 50²</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.option_text{
+  font-family: Outfit,sans-serif;
+  font-size: 22px;
+}
+.option_icon{
+  border-radius: 100px;
+  border-color: black;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  background-color: #FBD783FF;
+}
+.option_item{
+}
 
 .carousel_container{
 
 }
 .description{
   font-family: Quicksand,sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   width: 50%;
 }
 </style>

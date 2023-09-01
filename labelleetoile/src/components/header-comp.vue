@@ -6,7 +6,7 @@
 
 
   <header class="bg-white shadow-lg">
-    <div class="flex flex-grow mx-5 flex-row items-center justify-center">
+    <div class="flex flex-grow mx-5 py-6 flex-row items-center justify-center">
       <img src="../assets/stars.png" style="width: 50px; height: 50px;">
     <h1 class="font-semibold title mx-4">La Belle Étoile</h1>
   </div>
