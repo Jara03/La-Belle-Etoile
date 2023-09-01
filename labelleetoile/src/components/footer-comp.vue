@@ -40,9 +40,6 @@ export default {
 <style scoped>
 /* Aucun style spécifique nécessaire ici, car les classes Tailwind CSS sont utilisées */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background-color: #333;
   color: #fff;

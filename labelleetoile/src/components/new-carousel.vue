@@ -1,19 +1,19 @@
 <template>
-  <Carousel>
+  <Carousel items-to-show="3" :wrap-around="true" :autoplay="3000">
     <Slide v-for="(photo,index) in photos" :key="index">
-      <img :src="photo" alt="photo"/>
+      <img class="carousel__item"
+           :style="{ 'max-height': index === 0 ? 'auto' : '100%'}"
+           :src="photo" alt="photo"/>
     </Slide>
-
     <template #addons>
-      <Navigation />
-      <Pagination />
+      <Navigation/>
     </template>
   </Carousel>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
 
 import 'vue3-carousel/dist/carousel.css'
 
@@ -22,35 +22,28 @@ export default defineComponent({
   components: {
     Carousel,
     Slide,
-    Pagination,
     Navigation,
   },
   props: {
     photos: Array,
-  }
+  },
+
+
 })
 </script>
 
 <style>
+
 .carousel__item {
-  min-height: 200px;
-  width: 100%;
-  background-color: var(--vc-clr-primary);
+  background-color: var(--vc-clr-white);
   color: var(--vc-clr-white);
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  overflow: hidden; /* Crop content when it overflows the height */
+  margin-right:5px;
 
-.carousel__slide {
-  padding: 10px;
-}
-
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
 }
 </style>

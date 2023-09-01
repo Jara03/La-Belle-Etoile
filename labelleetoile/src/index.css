@@ -4,3 +4,22 @@
 @import 'tailwindcss/utilities';
 
 /* Ajoute des styles personnalisés ici */
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/Outfit/Outfit-VariableFont_wght.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../assets/Quicksand/Quicksand-VariableFont_wght.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "DM Serif Display";
+    src: url("../assets/DM_Serif_Display/DMSerifDisplay-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
